@@ -3,57 +3,56 @@
 	font-family: 'lato';
 	src: url('../fonts/lato/Lato-Regular.ttf') format('ttf');
 }
+@font-face {
+	font-family: 'raleway';
+	src: url('../fonts/Raleway-Regular.ttf') format('ttf');
+}
 
 
 $black:#2D2D2D;
 $grey: #999999;
 $pink: #FF7878;
+
 $imgpath: '../img';
 
 * { box-sizing: border-box }
 
 body,html{
-
+	height: 1500px;
 	width:100%;
 	margin:0;
 }
 
 header{
+
 	.navbar{
-		//overflow: hidden;
+		z-index:50;
+		position: relative;
+		overflow: hidden;
 		background-color: $black;
 		position: fixed;
 		top: 0; 
 		width: 100%;
-		padding:0;
+		//padding-top:1rem;
 	    height:5.18rem; //  83/16=5.18
-
-
-
+	    white-space: nowrap;
 	    .links{
-	    	display: block;
 	    	height:5.18rem;
-	    	text-align: right;
-	    	margin-right: 4rem;
-	    	width: auto;
-	    	border-top: 0;
-	    	padding-top: .6rem;
+	    	display:flex;
+	    	align-items: center;
 	    	& .logo{
 	    		white-space: nowrap;
-	    		padding-top: 15px;
-	    		margin-right: 54rem;
+	    		margin-right: 43.3rem;
+	    		margin-left: 3.7rem;
+	    		
 	    		& a {
-
-	    			font-weight: bolder;
+	    			font-weight: 800;
 	    			font-size: 22px; 
 
 	    			& i{
 	    				color: $pink;
-
-
-
+	    				margin:0 -4px 0 -4px;
 	    			}
-
 	    		}
 	    	} 
 	    }
@@ -62,24 +61,16 @@ header{
 	    	background-color:$pink;
 	    }
 	    & a{
-
-	    	font-size: .9rem;
-	    	padding: 10px 15px;
-
-	    	padding-top: 15px;
+	    	//letter-spacing: .1px;
+	    	padding: 5px 15px;
+	    	padding-top: 14px;
 	    	padding-bottom: 15px;
-	    	outline:none;
 	    	text-decoration: none;
 	    	color:$grey;
+	    	font-size:14.4px;
 	    	font-family:lato;
 	    	font-weight: 800;
-	    	line-height: 20px;
-
 	    }
-
-
-	    
-
 	}
 
 
@@ -87,19 +78,61 @@ header{
 		background: url('#{$imgpath}/header-bg.jpg') no-repeat center top;
 		width:100%;
 		margin:0;
+		margin-top:3.75rem;
 		min-height: 500px;
 		background-position: center center; 
 		background-size: cover;
-		text-align: center; 
-		margin-top: -10px;
-		padding-top: 20px;
-		h1{
 
+		text-align: center; 
+		h1{
+			position:absolute;
+			margin-left: auto;
+			margin-right: auto;
+			left: 0;
+			right: 0;
+			margin-top: 119px;
+			color: white;
+			font-size: 70px;
+			font-weight: 300;
+			letter-spacing: 3px;
+			//line-height: 4rem;
 		}
 		h2{
-
+			position:absolute;
+			margin-left: auto;
+			margin-right: auto;
+			left: 0;
+			right: 0;
+			color: white;
+			font-size: 40px;
+			font-weight: 700;
+			letter-spacing: 2px;
+			margin-top: 295px;
 		}
 	}
 }
+.presentation{
+	display:flex;
+	text-align: center;
+	font-size:14.4px;
+	font-family:lato;
+	//font-weight: 800;
+	p{
+		color:$grey;
+	}
+	i{
+		color: $pink;
+		font-size: 30px;
+		margin-top:5rem;
+	}
+	.design{
 
+	}
+	.bootstrap{
+
+	}
+	.support{
+
+	}
+}
 

@@ -1,60 +1,95 @@
 @font-face {
   font-family: 'lato';
   src: url("../fonts/lato/Lato-Regular.ttf") format("ttf"); }
+@font-face {
+  font-family: 'raleway';
+  src: url("../fonts/Raleway-Regular.ttf") format("ttf"); }
 * {
   box-sizing: border-box; }
 
 body, html {
+  height: 1500px;
   width: 100%;
   margin: 0; }
 
 header .navbar {
+  z-index: 50;
+  position: relative;
+  overflow: hidden;
   background-color: #2D2D2D;
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0;
-  height: 5.18rem; }
+  height: 5.18rem;
+  white-space: nowrap; }
   header .navbar .links {
-    display: block;
     height: 5.18rem;
-    text-align: right;
-    margin-right: 4rem;
-    width: auto;
-    border-top: 0;
-    padding-top: .6rem; }
+    display: flex;
+    align-items: center; }
     header .navbar .links .logo {
       white-space: nowrap;
-      padding-top: 15px;
-      margin-right: 54rem; }
+      margin-right: 43.3rem;
+      margin-left: 3.7rem; }
       header .navbar .links .logo a {
-        font-weight: bolder;
+        font-weight: 800;
         font-size: 22px; }
         header .navbar .links .logo a i {
-          color: #FF7878; }
+          color: #FF7878;
+          margin: 0 -4px 0 -4px; }
   header .navbar .home {
     color: white;
     background-color: #FF7878; }
   header .navbar a {
-    font-size: .9rem;
-    padding: 10px 15px;
-    padding-top: 15px;
+    padding: 5px 15px;
+    padding-top: 14px;
     padding-bottom: 15px;
-    outline: none;
     text-decoration: none;
     color: #999999;
+    font-size: 14.4px;
     font-family: lato;
-    font-weight: 800;
-    line-height: 20px; }
+    font-weight: 800; }
 header .header {
   background: url("../img/header-bg.jpg") no-repeat center top;
   width: 100%;
   margin: 0;
+  margin-top: 3.75rem;
   min-height: 500px;
   background-position: center center;
   background-size: cover;
+  text-align: center; }
+  header .header h1 {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-top: 119px;
+    color: white;
+    font-size: 70px;
+    font-weight: 300;
+    letter-spacing: 3px; }
+  header .header h2 {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 295px; }
+
+.presentation {
+  display: flex;
   text-align: center;
-  margin-top: -10px;
-  padding-top: 20px; }
+  font-size: 14.4px;
+  font-family: lato; }
+  .presentation p {
+    color: #999999; }
+  .presentation i {
+    color: #FF7878;
+    font-size: 30px;
+    margin-top: 5rem; }
 
 /*# sourceMappingURL=style.css.map */

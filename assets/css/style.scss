@@ -7,17 +7,24 @@
 	font-family: 'raleway';
 	src: url('../fonts/Raleway-Regular.ttf') format('ttf');
 }
-
-
+@font-face {
+	font-family: 'lightRaleway';
+	src: url('../fonts/Raleway-ExtraLight.ttf') format('ttf');
+}
+$background:#F2F2F2;
 $black:#2D2D2D;
-$grey: #999999;
+$greyTypo: #999999;
+$grey:#E0E0E0;
 $pink: #FF7878;
+
+$p:#555;
 
 $imgpath: '../img';
 
 * { box-sizing: border-box }
 
 body,html{
+	background-color:$background;
 	height: 1500px;
 	width:100%;
 	margin:0;
@@ -33,7 +40,6 @@ header{
 		position: fixed;
 		top: 0; 
 		width: 100%;
-		//padding-top:1rem;
 	    height:5.18rem; //  83/16=5.18
 	    white-space: nowrap;
 	    .links{
@@ -61,12 +67,11 @@ header{
 	    	background-color:$pink;
 	    }
 	    & a{
-	    	//letter-spacing: .1px;
 	    	padding: 5px 15px;
 	    	padding-top: 14px;
 	    	padding-bottom: 15px;
 	    	text-decoration: none;
-	    	color:$grey;
+	    	color:$greyTypo;
 	    	font-size:14.4px;
 	    	font-family:lato;
 	    	font-weight: 800;
@@ -85,6 +90,7 @@ header{
 
 		text-align: center; 
 		h1{
+			font-family:lato;
 			position:absolute;
 			margin-left: auto;
 			margin-right: auto;
@@ -95,7 +101,6 @@ header{
 			font-size: 70px;
 			font-weight: 300;
 			letter-spacing: 3px;
-			//line-height: 4rem;
 		}
 		h2{
 			position:absolute;
@@ -104,6 +109,7 @@ header{
 			left: 0;
 			right: 0;
 			color: white;
+			font-family:lato;
 			font-size: 40px;
 			font-weight: 700;
 			letter-spacing: 2px;
@@ -112,13 +118,24 @@ header{
 	}
 }
 .presentation{
+	margin: 0 6rem 2rem 6rem;
 	display:flex;
 	text-align: center;
 	font-size:14.4px;
 	font-family:lato;
+	h3{
+		margin-top:0.5rem;
+		font-weight: 700;
+		font-size: 17.5px;
+	}
 	//font-weight: 800;
 	p{
-		color:$grey;
+		
+		line-height: 28px;
+		font-family: lato;
+		font-weight: 300;
+		font-size: 16px;
+		color: $p;
 	}
 	i{
 		color: $pink;
@@ -126,13 +143,84 @@ header{
 		margin-top:5rem;
 	}
 	.design{
-
+		width:60rem;
+		padding-right:2rem;
 	}
 	.bootstrap{
-
+		width:58rem;
+		
 	}
 	.support{
-
+		width:60rem;
+		padding-left:2rem;
 	}
 }
 
+.phones{
+	width:100%;
+	display:flex;
+	background-color:$grey;
+	padding:6rem 0 4rem 0;
+	justify-content:center;
+
+	p{
+		position:absolute;
+		font-weight: 700;
+		font-size: 17.5px;
+		margin-top:-2rem;
+		font-family: lato;
+	}
+	.phone1{
+		width:300px;
+		height: 426px;
+		margin-right: 6rem;
+		background: url('#{$imgpath}/p01.png') no-repeat;
+		-webkit-transition:-webkit-transform .5s; // Chrome Safari 
+		-moz-transition:-moz-transform .5s; // Mozilla 
+		-o-transition:-o-transform .5s; // Opéra 
+		-ms-transition:-ms-transform .5s; // IE  
+		transition:transform .5s;
+		&:hover{
+			-webkit-transform:rotate(-10deg); 
+			-moz-transform:rotate(-10deg);
+			-o-transform:rotate(-10deg); 
+			-ms-transform:rotate(-10deg); 
+			transform:rotate(-10deg);
+		}
+	}
+	.phone2{
+		width:300px;
+		height: 426px;
+		background: url('#{$imgpath}/p02.png') no-repeat;
+		-webkit-transition:-webkit-transform .5s; 
+		-moz-transition:-moz-transform .5s;      
+		-o-transition:-o-transform .5s;         
+		-ms-transition:-ms-transform .5s;        
+		transition:transform .5s;
+		&:hover{
+			-webkit-transform:rotate(-10deg); 
+			-moz-transform:rotate(-10deg);
+			-o-transform:rotate(-10deg); 
+			-ms-transform:rotate(-10deg); 
+			transform:rotate(-10deg);
+		}
+	}
+	.phone3{
+		width:300px;
+		height: 426px;
+		margin-left: 6rem;
+		background: url('#{$imgpath}/p03.png') no-repeat;
+		-webkit-transition:-webkit-transform .5s;
+		-moz-transition:-moz-transform .5s;       
+		-o-transition:-o-transform .5s;         
+		-ms-transition:-ms-transform .5s;        
+		transition:transform .5s;
+		&:hover{
+			-webkit-transform:rotate(-10deg); 
+			-moz-transform:rotate(-10deg);
+			-o-transform:rotate(-10deg); 
+			-ms-transform:rotate(-10deg); 
+			transform:rotate(-10deg);
+		}
+	}
+}

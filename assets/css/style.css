@@ -4,10 +4,14 @@
 @font-face {
   font-family: 'raleway';
   src: url("../fonts/Raleway-Regular.ttf") format("ttf"); }
+@font-face {
+  font-family: 'lightRaleway';
+  src: url("../fonts/Raleway-ExtraLight.ttf") format("ttf"); }
 * {
   box-sizing: border-box; }
 
 body, html {
+  background-color: #F2F2F2;
   height: 1500px;
   width: 100%;
   margin: 0; }
@@ -58,6 +62,7 @@ header .header {
   background-size: cover;
   text-align: center; }
   header .header h1 {
+    font-family: lato;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -75,21 +80,99 @@ header .header {
     left: 0;
     right: 0;
     color: white;
+    font-family: lato;
     font-size: 40px;
     font-weight: 700;
     letter-spacing: 2px;
     margin-top: 295px; }
 
 .presentation {
+  margin: 0 6rem 2rem 6rem;
   display: flex;
   text-align: center;
   font-size: 14.4px;
   font-family: lato; }
+  .presentation h3 {
+    margin-top: 0.5rem;
+    font-weight: 700;
+    font-size: 17.5px; }
   .presentation p {
-    color: #999999; }
+    line-height: 28px;
+    font-family: lato;
+    font-weight: 300;
+    font-size: 16px;
+    color: #555; }
   .presentation i {
     color: #FF7878;
     font-size: 30px;
     margin-top: 5rem; }
+  .presentation .design {
+    width: 60rem;
+    padding-right: 2rem; }
+  .presentation .bootstrap {
+    width: 58rem; }
+  .presentation .support {
+    width: 60rem;
+    padding-left: 2rem; }
+
+.phones {
+  width: 100%;
+  display: flex;
+  background-color: #E0E0E0;
+  padding: 6rem 0 4rem 0;
+  justify-content: center; }
+  .phones p {
+    position: absolute;
+    font-weight: 700;
+    font-size: 17.5px;
+    margin-top: -2rem;
+    font-family: lato; }
+  .phones .phone1 {
+    width: 300px;
+    height: 426px;
+    margin-right: 6rem;
+    background: url("../img/p01.png") no-repeat;
+    -webkit-transition: -webkit-transform .5s;
+    -moz-transition: -moz-transform .5s;
+    -o-transition: -o-transform .5s;
+    -ms-transition: -ms-transform .5s;
+    transition: transform .5s; }
+    .phones .phone1:hover {
+      -webkit-transform: rotate(-10deg);
+      -moz-transform: rotate(-10deg);
+      -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+      transform: rotate(-10deg); }
+  .phones .phone2 {
+    width: 300px;
+    height: 426px;
+    background: url("../img/p02.png") no-repeat;
+    -webkit-transition: -webkit-transform .5s;
+    -moz-transition: -moz-transform .5s;
+    -o-transition: -o-transform .5s;
+    -ms-transition: -ms-transform .5s;
+    transition: transform .5s; }
+    .phones .phone2:hover {
+      -webkit-transform: rotate(-10deg);
+      -moz-transform: rotate(-10deg);
+      -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+      transform: rotate(-10deg); }
+  .phones .phone3 {
+    width: 300px;
+    height: 426px;
+    margin-left: 6rem;
+    background: url("../img/p03.png") no-repeat;
+    -webkit-transition: -webkit-transform .5s;
+    -moz-transition: -moz-transform .5s;
+    -o-transition: -o-transform .5s;
+    -ms-transition: -ms-transform .5s;
+    transition: transform .5s; }
+    .phones .phone3:hover {
+      -webkit-transform: rotate(-10deg);
+      -moz-transform: rotate(-10deg);
+      -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+      transform: rotate(-10deg); }
 
 /*# sourceMappingURL=style.css.map */

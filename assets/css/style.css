@@ -35,15 +35,23 @@ header .navbar {
       margin-right: 43.3rem;
       margin-left: 3.7rem; }
       header .navbar .links .logo a {
+        color: #999999;
+        transition: color 0.3s ease;
         font-weight: 800;
         font-size: 22px; }
+        header .navbar .links .logo a:hover {
+          color: white; }
         header .navbar .links .logo a i {
           color: #FF7878;
           margin: 0 -4px 0 -4px; }
   header .navbar .home {
     color: white;
-    background-color: #FF7878; }
+    background-color: #FF7878;
+    transition: background-color 0.3s ease; }
+    header .navbar .home:hover {
+      background-color: black; }
   header .navbar a {
+    transition: color 0.3s ease;
     padding: 5px 15px;
     padding-top: 14px;
     padding-bottom: 15px;
@@ -52,6 +60,8 @@ header .navbar {
     font-size: 14.4px;
     font-family: lato;
     font-weight: 800; }
+    header .navbar a:hover {
+      color: white; }
 header .header {
   background: url("../img/header-bg.jpg") no-repeat center top;
   width: 100%;
@@ -252,5 +262,3 @@ footer {
     footer i:hover {
       color: #FF7878;
       cursor: pointer; }
-
-/*# sourceMappingURL=style.css.map */

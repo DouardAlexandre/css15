@@ -53,9 +53,13 @@ header{
 				margin-left: 3.7rem;
 
 				& a {
+					color:$greyTypo;
+					transition: color 0.3s ease;
 					font-weight: 800;
 					font-size: 22px; 
-
+					&:hover {
+						color:white;					
+					}
 					& i{
 						color: $pink;
 						margin:0 -4px 0 -4px;
@@ -66,8 +70,13 @@ header{
 		& .home{
 			color:white;
 			background-color:$pink;
+			transition: background-color 0.3s ease;
+			&:hover {
+				background-color:black;
+			}
 		}
 		& a{
+			transition: color 0.3s ease;
 			padding: 5px 15px;
 			padding-top: 14px;
 			padding-bottom: 15px;
@@ -76,6 +85,9 @@ header{
 			font-size:14.4px;
 			font-family:lato;
 			font-weight: 800;
+			&:hover {
+				color:white;
+			}
 		}
 	}
 

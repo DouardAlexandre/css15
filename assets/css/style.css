@@ -175,4 +175,63 @@ header .header {
       -ms-transform: rotate(-10deg);
       transform: rotate(-10deg); }
 
+.design {
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  .design .screen {
+    width: 1600px;
+    height: 564px;
+    background: url("../img/munter.png") no-repeat;
+    transform: scale(0.5); }
+
+.clients {
+  display: flex;
+  justify-content: center;
+  background-color: #EBEBEB; }
+  .clients p {
+    position: absolute; }
+  .clients .lowe {
+    width: 170px;
+    height: 200px;
+    background: url("../img/c01.gif") no-repeat; }
+  .clients .ms {
+    width: 170px;
+    height: 200px;
+    background: url("../img/c02.gif") no-repeat; }
+  .clients .sealy {
+    width: 170px;
+    height: 200px;
+    background: url("../img/c03.gif") no-repeat; }
+  .clients .circle {
+    width: 170px;
+    height: 200px;
+    background: url("../img/c04.gif") no-repeat; }
+  .clients .wells {
+    width: 170px;
+    height: 200px;
+    background: url("../img/c05.gif") no-repeat; }
+
+.storytellers {
+  color: white;
+  background-color: #FF7878;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+
+footer {
+  width: 100%;
+  height: 130px;
+  background-color: #2D2D2D;
+  display: flex;
+  justify-content: center;
+  line-height: 130px;
+  color: #bdbdbd;
+  font-size: 30px; }
+  footer i {
+    margin-left: 2rem; }
+    footer i:hover {
+      color: #FF7878;
+      cursor: pointer; }
+
 /*# sourceMappingURL=style.css.map */

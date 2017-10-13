@@ -11,15 +11,16 @@
 	font-family: 'lightRaleway';
 	src: url('../fonts/Raleway-ExtraLight.ttf') format('ttf');
 }
-$background:#F2F2F2;
-$black:#2D2D2D;
-$greyTypo: #999999;
-$grey:#E0E0E0;
-$pink: #FF7878;
-
-$p:#555;
 
 $imgpath: '../img';
+$background:#F2F2F2;
+$black:#2D2D2D;
+$greySocial:#bdbdbd;
+$greyTypo: #999999;
+$greylight:#EBEBEB;
+$grey:#E0E0E0;
+$pink: #FF7878;
+$p:#555;
 
 * { box-sizing: border-box }
 
@@ -40,42 +41,42 @@ header{
 		position: fixed;
 		top: 0; 
 		width: 100%;
-	    height:5.18rem; //  83/16=5.18
-	    white-space: nowrap;
-	    .links{
-	    	height:5.18rem;
-	    	display:flex;
-	    	align-items: center;
-	    	& .logo{
-	    		white-space: nowrap;
-	    		margin-right: 43.3rem;
-	    		margin-left: 3.7rem;
-	    		
-	    		& a {
-	    			font-weight: 800;
-	    			font-size: 22px; 
+		height:5.18rem; 
+		white-space: nowrap;
+		.links{
+			height:5.18rem;
+			display:flex;
+			align-items: center;
+			& .logo{
+				white-space: nowrap;
+				margin-right: 43.3rem;
+				margin-left: 3.7rem;
 
-	    			& i{
-	    				color: $pink;
-	    				margin:0 -4px 0 -4px;
-	    			}
-	    		}
-	    	} 
-	    }
-	    & .home{
-	    	color:white;
-	    	background-color:$pink;
-	    }
-	    & a{
-	    	padding: 5px 15px;
-	    	padding-top: 14px;
-	    	padding-bottom: 15px;
-	    	text-decoration: none;
-	    	color:$greyTypo;
-	    	font-size:14.4px;
-	    	font-family:lato;
-	    	font-weight: 800;
-	    }
+				& a {
+					font-weight: 800;
+					font-size: 22px; 
+
+					& i{
+						color: $pink;
+						margin:0 -4px 0 -4px;
+					}
+				}
+			} 
+		}
+		& .home{
+			color:white;
+			background-color:$pink;
+		}
+		& a{
+			padding: 5px 15px;
+			padding-top: 14px;
+			padding-bottom: 15px;
+			text-decoration: none;
+			color:$greyTypo;
+			font-size:14.4px;
+			font-family:lato;
+			font-weight: 800;
+		}
 	}
 
 
@@ -128,7 +129,6 @@ header{
 		font-weight: 700;
 		font-size: 17.5px;
 	}
-	//font-weight: 800;
 	p{
 		
 		line-height: 28px;
@@ -223,4 +223,80 @@ header{
 			transform:rotate(-10deg);
 		}
 	}
+}
+.design{
+	display:flex;
+	flex-direction:column;
+	text-align:center;
+	h4{
+
+	}
+	.screen{
+		width:1600px;
+		height: 564px;
+		background: url('#{$imgpath}/munter.png') no-repeat;
+		transform:scale(.5);
+	}
+}
+.clients{
+	display:flex;
+	justify-content:center;
+	background-color:$greylight;
+	p{
+		position:absolute;
+	}
+	.awesome{
+
+	}
+	.lowe{
+		width:170px;
+		height: 200px;
+		background: url('#{$imgpath}/c01.gif') no-repeat;
+	}
+	.ms{
+		width:170px;
+		height: 200px;
+		background: url('#{$imgpath}/c02.gif') no-repeat;
+	}
+	.sealy{
+		width:170px;
+		height: 200px;
+		background: url('#{$imgpath}/c03.gif') no-repeat;
+	}
+	.circle{
+		width:170px;
+		height: 200px;
+		background: url('#{$imgpath}/c04.gif') no-repeat;
+	}
+	.wells{
+		width:170px;
+		height: 200px;
+		background: url('#{$imgpath}/c05.gif') no-repeat;
+	}
+}
+.storytellers{
+	color:white;
+	background-color:$pink;
+	display:flex;
+	flex-direction:column;
+	text-align:center;
+	//justify-content:center;
+}
+footer{
+	width:100%;
+	height:130px;
+	background-color:$black;
+	display:flex;
+	justify-content:center;
+	line-height:130px;
+	color:$greySocial;
+	font-size: 30px;
+	i{
+		margin-left:2rem;
+		&:hover{
+			color:$pink;
+			cursor:pointer;
+		}
+	}
+	
 }

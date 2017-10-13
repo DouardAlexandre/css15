@@ -244,43 +244,67 @@ header{
 	background-color:$greylight;
 	p{
 		position:absolute;
-	}
-	.awesome{
 
 	}
-	.lowe{
-		width:170px;
-		height: 200px;
-		background: url('#{$imgpath}/c01.gif') no-repeat;
+	.wrap{
+		display:flex;
+		justify-content:center;
+		margin-top:3rem;
+		margin-bottom:6rem;
+		.lowe{
+
+			width:170px;
+			height: 200px;
+			background: url('#{$imgpath}/c01.gif') no-repeat;
+		}
+		.ms{
+			width:170px;
+			height: 200px;
+			background: url('#{$imgpath}/c02.gif') no-repeat;
+		}
+		.sealy{
+			width:170px;
+			height: 200px;
+			background: url('#{$imgpath}/c03.gif') no-repeat;
+		}
+		.circle{
+			width:170px;
+			height: 200px;
+			background: url('#{$imgpath}/c04.gif') no-repeat;
+		}
+		.wells{
+			width:170px;
+			height: 200px;
+			background: url('#{$imgpath}/c05.gif') no-repeat;
+		}
 	}
-	.ms{
-		width:170px;
-		height: 200px;
-		background: url('#{$imgpath}/c02.gif') no-repeat;
-	}
-	.sealy{
-		width:170px;
-		height: 200px;
-		background: url('#{$imgpath}/c03.gif') no-repeat;
-	}
-	.circle{
-		width:170px;
-		height: 200px;
-		background: url('#{$imgpath}/c04.gif') no-repeat;
-	}
-	.wells{
-		width:170px;
-		height: 200px;
-		background: url('#{$imgpath}/c05.gif') no-repeat;
-	}
+	
 }
 .storytellers{
+	
+	line-height:1.7rem;
 	color:white;
 	background-color:$pink;
 	display:flex;
 	flex-direction:column;
 	text-align:center;
-	//justify-content:center;
+	h3{
+		margin:0;
+		margin-top:2.6rem;
+		font-size:18px;
+	}
+	.wrapper{
+		margin:0 16.3rem 0 16.3rem;
+
+		p{
+			font-family:lato;
+			font-weight: 300;
+			margin-top:0.5rem;
+			margin-bottom:3.8rem;
+		}
+	}
+
+
 }
 footer{
 	width:100%;
@@ -292,7 +316,10 @@ footer{
 	color:$greySocial;
 	font-size: 30px;
 	i{
-		margin-left:2rem;
+		margin-left:2.4rem;
+		&.fa-twitter{
+			margin-left:0;
+		}
 		&:hover{
 			color:$pink;
 			cursor:pointer;

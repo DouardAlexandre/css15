@@ -1,32 +1,83 @@
 
+
+
+
 @font-face {
-	font-family: 'lato';
-	src: url('../fonts/lato/Lato-Regular.ttf') format('ttf');
-}
+	font-family: 'Lato';
+	src: url('../fonts/lato/Lato-Regular.ttf') format('truetype');
+} 
 @font-face {
-	font-family: 'raleway';
-	src: url('../fonts/Raleway-Regular.ttf') format('ttf');
-}
+	font-family: 'Lato-Light';
+	src: url('../fonts/lato/Lato-Light.ttf') format('truetype');
+} 
 @font-face {
-	font-family: 'lightRaleway';
-	src: url('../fonts/Raleway-ExtraLight.ttf') format('ttf');
+	font-family: 'Raleway';
+	src: url('../fonts/raleway/Raleway-Regular.ttf') format('truetype');
+} 
+@font-face {
+	font-family: 'Raleway-Bold';
+	src: url('../fonts/raleway/Raleway-Bold.ttf') format('truetype');
+} 
+
+
+@mixin transform($radius) {
+	-webkit-transform:rotate($radius); 
+	-moz-transform:rotate($radius);
+	-o-transform:rotate($radius); 
+	-ms-transform:rotate($radius); 
+	transform:rotate($radius);
 }
 
+@mixin transition($transition) {
+	width:300px;
+	height: 426px;
+	-webkit-transition:-webkit-transform .5s;  
+	-moz-transition:-moz-transform .5s;       
+	-o-transition:-o-transform .5s;           
+	-ms-transition:-ms-transform .5s;          
+	transition:transform .5s;
+}
+@mixin centerAbsolutePosition() {
+	position:absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+@mixin Raleway-Title() {
+	font-size: 18px;
+	font-family:$Raleway-Bold;
+	color: $RalewayTitles;
+	font-weight: bold;
+}
+
+
+
+$Lato:Lato;
+$Lato-Light:Lato-Light;
+$Raleway: Raleway;
+$Raleway-Bold: Raleway-Bold;
 $imgpath: '../img';
 $background:#F2F2F2;
+$RalewayTitles:#333333;
 $black:#2D2D2D;
 $greySocial:#bdbdbd;
 $greyTypo: #999999;
 $greylight:#EBEBEB;
 $grey:#E0E0E0;
 $pink: #FF7878;
-$p:#555;
+$p:#555555;
 
-* { box-sizing: border-box }
+* { 
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box
+}
 
 body,html{
 	background-color:$background;
-	height: 1500px;
+	font-family:$Lato;
 	width:100%;
 	margin:0;
 }
@@ -34,25 +85,29 @@ body,html{
 header{
 
 	.navbar{
-		z-index:50;
+		z-index:2;
 		position: relative;
+		//margin: 0 auto;
 		overflow: hidden;
 		background-color: $black;
 		position: fixed;
 		top: 0; 
 		width: 100%;
 		height:5.18rem; 
+		
 		white-space: nowrap;
 		.links{
+
 			height:5.18rem;
 			display:flex;
 			align-items: center;
 			& .logo{
-				white-space: nowrap;
-				margin-right: 43.3rem;
-				margin-left: 3.7rem;
-
+				
+				flex: 1;
+				margin-left: 3.5rem;
+				
 				& a {
+					text-decoration:none; 
 					color:$greyTypo;
 					transition: color 0.3s ease;
 					font-weight: 800;
@@ -65,30 +120,35 @@ header{
 						margin:0 -4px 0 -4px;
 					}
 				}
+			}
+			.menu{
+				display: block;
+				width: 400px;
+				right: 0;
+				& .home{
+					color:white;
+					background-color:$pink;
+					transition: background-color 0.3s ease;
+					&:hover {
+						background-color:black;
+					}
+				}
+				& a{
+					transition: color 0.3s ease;
+					padding: 5px 15px;
+					padding-top: 14px;
+					padding-bottom: 15px;
+					text-decoration: none;
+					color:$greyTypo;
+					font-size:14.4px;
+					font-weight: 800;
+					&:hover {
+						color:white;
+					}
+				}
 			} 
 		}
-		& .home{
-			color:white;
-			background-color:$pink;
-			transition: background-color 0.3s ease;
-			&:hover {
-				background-color:black;
-			}
-		}
-		& a{
-			transition: color 0.3s ease;
-			padding: 5px 15px;
-			padding-top: 14px;
-			padding-bottom: 15px;
-			text-decoration: none;
-			color:$greyTypo;
-			font-size:14.4px;
-			font-family:lato;
-			font-weight: 800;
-			&:hover {
-				color:white;
-			}
-		}
+		
 	}
 
 
@@ -103,12 +163,9 @@ header{
 
 		text-align: center; 
 		h1{
-			font-family:lato;
-			position:absolute;
-			margin-left: auto;
-			margin-right: auto;
-			left: 0;
-			right: 0;
+
+			font-family:$Raleway;
+			@include centerAbsolutePosition();
 			margin-top: 119px;
 			color: white;
 			font-size: 70px;
@@ -116,13 +173,10 @@ header{
 			letter-spacing: 3px;
 		}
 		h2{
-			position:absolute;
-			margin-left: auto;
-			margin-right: auto;
-			left: 0;
-			right: 0;
+			font-family:$Raleway-Bold;
+			@include centerAbsolutePosition();
 			color: white;
-			font-family:lato;
+
 			font-size: 40px;
 			font-weight: 700;
 			letter-spacing: 2px;
@@ -135,17 +189,15 @@ header{
 	display:flex;
 	text-align: center;
 	font-size:14.4px;
-	font-family:lato;
+	
 	h3{
 		margin-top:0.5rem;
 		font-weight: 700;
 		font-size: 17.5px;
 	}
 	p{
-		
 		line-height: 28px;
-		font-family: lato;
-		font-weight: 300;
+		font-family:$Lato-Light;
 		font-size: 16px;
 		color: $p;
 	}
@@ -160,7 +212,7 @@ header{
 	}
 	.bootstrap{
 		width:58rem;
-		
+
 	}
 	.support{
 		width:60rem;
@@ -176,78 +228,61 @@ header{
 	justify-content:center;
 
 	p{
+		@include Raleway-Title();
 		position:absolute;
-		font-weight: 700;
-		font-size: 17.5px;
 		margin-top:-2rem;
-		font-family: lato;
+
 	}
 	.phone1{
-		width:300px;
-		height: 426px;
+		@include transition(.5s);
 		margin-right: 6rem;
 		background: url('#{$imgpath}/p01.png') no-repeat;
-		-webkit-transition:-webkit-transform .5s; // Chrome Safari 
-		-moz-transition:-moz-transform .5s; // Mozilla 
-		-o-transition:-o-transform .5s; // Opéra 
-		-ms-transition:-ms-transform .5s; // IE  
-		transition:transform .5s;
 		&:hover{
-			-webkit-transform:rotate(-10deg); 
-			-moz-transform:rotate(-10deg);
-			-o-transform:rotate(-10deg); 
-			-ms-transform:rotate(-10deg); 
-			transform:rotate(-10deg);
+			@include transform(-10deg);
 		}
 	}
 	.phone2{
-		width:300px;
-		height: 426px;
+		@include transition(.5s);
 		background: url('#{$imgpath}/p02.png') no-repeat;
-		-webkit-transition:-webkit-transform .5s; 
-		-moz-transition:-moz-transform .5s;      
-		-o-transition:-o-transform .5s;         
-		-ms-transition:-ms-transform .5s;        
-		transition:transform .5s;
 		&:hover{
-			-webkit-transform:rotate(-10deg); 
-			-moz-transform:rotate(-10deg);
-			-o-transform:rotate(-10deg); 
-			-ms-transform:rotate(-10deg); 
-			transform:rotate(-10deg);
+			@include transform(-10deg);
 		}
 	}
 	.phone3{
-		width:300px;
-		height: 426px;
+		@include transition(.5s);
 		margin-left: 6rem;
 		background: url('#{$imgpath}/p03.png') no-repeat;
-		-webkit-transition:-webkit-transform .5s;
-		-moz-transition:-moz-transform .5s;       
-		-o-transition:-o-transform .5s;         
-		-ms-transition:-ms-transform .5s;        
-		transition:transform .5s;
 		&:hover{
-			-webkit-transform:rotate(-10deg); 
-			-moz-transform:rotate(-10deg);
-			-o-transform:rotate(-10deg); 
-			-ms-transform:rotate(-10deg); 
-			transform:rotate(-10deg);
+			@include transform(-10deg);
 		}
 	}
 }
-.design{
-	display:flex;
-	flex-direction:column;
+.creation{
 	text-align:center;
-	h4{
-
+	width: 100%;
+	height: 500px;
+	position: relative;
+	h4{  
+		padding-top:3rem;
+		@include Raleway-Title();
+	}
+	p{
+		font-family:$Lato-Light;
+		//margin-bottom: 14rem;
 	}
 	.screen{
 		width:1600px;
-		height: 564px;
-		background: url('#{$imgpath}/munter.png') no-repeat;
-		transform:scale(.5);
+		height:333.11px;
+		max-width: 80%;
+		max-height: 70%;
+		bottom:0;
+		background-image: url('#{$imgpath}/munter.png');
+		background-repeat: no-repeat;
+		background-position: center bottom;  
+		background-size: contain; 
+		position: absolute;
+		left:50%;
+		transform:translateX(-50%);
 	}
 }
 .clients{
@@ -255,6 +290,7 @@ header{
 	justify-content:center;
 	background-color:$greylight;
 	p{
+		@include Raleway-Title();
 		position:absolute;
 
 	}
@@ -290,10 +326,10 @@ header{
 			background: url('#{$imgpath}/c05.gif') no-repeat;
 		}
 	}
-	
+
 }
 .storytellers{
-	
+
 	line-height:1.7rem;
 	color:white;
 	background-color:$pink;
@@ -301,6 +337,8 @@ header{
 	flex-direction:column;
 	text-align:center;
 	h3{
+		@include Raleway-Title();
+		color:white;
 		margin:0;
 		margin-top:2.6rem;
 		font-size:18px;
@@ -309,7 +347,7 @@ header{
 		margin:0 16.3rem 0 16.3rem;
 
 		p{
-			font-family:lato;
+			font-family:$Lato-Light;
 			font-weight: 300;
 			margin-top:0.5rem;
 			margin-bottom:3.8rem;
@@ -337,5 +375,49 @@ footer{
 			cursor:pointer;
 		}
 	}
+
+}
+
+
+@media only screen and (max-width: 1150px) {
+	.presentation{
+		overflow: auto;
+		overflow-x: hidden;
+		margin:0 auto;
+		display:flex;
+		justify-content:center;
+		text-align: center;
+		font-size:14.4px;
+        flex-wrap:wrap;
+        h3{
+        	margin-top:0.5rem;
+        	font-weight: 700;
+        	font-size: 17.5px;
+        }
+        p{
+        	line-height: 28px;
+        	font-family:$Lato-Light;
+        	font-size: 16px;
+        	color: $p;
+		}
+		i{
+			color: $pink;
+			font-size: 30px;
+		}
+		.design{
+			padding: 0;
+			margin-top:-0.5rem;
+		}
+		.bootstrap{
+			padding: 0;
+			margin-top:-2rem;
+		}
+		.support{
+			padding: 0;
+			margin-bottom: 4rem;
+		}
+	}
+}
+@media only screen and (max-width: 555px) {
 	
 }

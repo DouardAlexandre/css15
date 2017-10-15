@@ -1,23 +1,29 @@
 @font-face {
-  font-family: 'lato';
-  src: url("../fonts/lato/Lato-Regular.ttf") format("ttf"); }
+  font-family: 'Lato';
+  src: url("../fonts/lato/Lato-Regular.ttf") format("truetype"); }
 @font-face {
-  font-family: 'raleway';
-  src: url("../fonts/Raleway-Regular.ttf") format("ttf"); }
+  font-family: 'Lato-Light';
+  src: url("../fonts/lato/Lato-Light.ttf") format("truetype"); }
 @font-face {
-  font-family: 'lightRaleway';
-  src: url("../fonts/Raleway-ExtraLight.ttf") format("ttf"); }
+  font-family: 'Raleway';
+  src: url("../fonts/raleway/Raleway-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Raleway-Bold';
+  src: url("../fonts/raleway/Raleway-Bold.ttf") format("truetype"); }
 * {
+  margin: 0;
+  padding: 0;
+  outline: none;
   box-sizing: border-box; }
 
 body, html {
   background-color: #F2F2F2;
-  height: 1500px;
+  font-family: Lato;
   width: 100%;
   margin: 0; }
 
 header .navbar {
-  z-index: 50;
+  z-index: 2;
   position: relative;
   overflow: hidden;
   background-color: #2D2D2D;
@@ -31,10 +37,10 @@ header .navbar {
     display: flex;
     align-items: center; }
     header .navbar .links .logo {
-      white-space: nowrap;
-      margin-right: 43.3rem;
-      margin-left: 3.7rem; }
+      flex: 1;
+      margin-left: 3.5rem; }
       header .navbar .links .logo a {
+        text-decoration: none;
         color: #999999;
         transition: color 0.3s ease;
         font-weight: 800;
@@ -44,24 +50,27 @@ header .navbar {
         header .navbar .links .logo a i {
           color: #FF7878;
           margin: 0 -4px 0 -4px; }
-  header .navbar .home {
-    color: white;
-    background-color: #FF7878;
-    transition: background-color 0.3s ease; }
-    header .navbar .home:hover {
-      background-color: black; }
-  header .navbar a {
-    transition: color 0.3s ease;
-    padding: 5px 15px;
-    padding-top: 14px;
-    padding-bottom: 15px;
-    text-decoration: none;
-    color: #999999;
-    font-size: 14.4px;
-    font-family: lato;
-    font-weight: 800; }
-    header .navbar a:hover {
-      color: white; }
+    header .navbar .links .menu {
+      display: block;
+      width: 400px;
+      right: 0; }
+      header .navbar .links .menu .home {
+        color: white;
+        background-color: #FF7878;
+        transition: background-color 0.3s ease; }
+        header .navbar .links .menu .home:hover {
+          background-color: black; }
+      header .navbar .links .menu a {
+        transition: color 0.3s ease;
+        padding: 5px 15px;
+        padding-top: 14px;
+        padding-bottom: 15px;
+        text-decoration: none;
+        color: #999999;
+        font-size: 14.4px;
+        font-weight: 800; }
+        header .navbar .links .menu a:hover {
+          color: white; }
 header .header {
   background: url("../img/header-bg.jpg") no-repeat center top;
   width: 100%;
@@ -72,7 +81,7 @@ header .header {
   background-size: cover;
   text-align: center; }
   header .header h1 {
-    font-family: lato;
+    font-family: Raleway;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -84,13 +93,13 @@ header .header {
     font-weight: 300;
     letter-spacing: 3px; }
   header .header h2 {
+    font-family: Raleway-Bold;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
     color: white;
-    font-family: lato;
     font-size: 40px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -100,18 +109,16 @@ header .header {
   margin: 0 6rem 2rem 6rem;
   display: flex;
   text-align: center;
-  font-size: 14.4px;
-  font-family: lato; }
+  font-size: 14.4px; }
   .presentation h3 {
     margin-top: 0.5rem;
     font-weight: 700;
     font-size: 17.5px; }
   .presentation p {
     line-height: 28px;
-    font-family: lato;
-    font-weight: 300;
+    font-family: Lato-Light;
     font-size: 16px;
-    color: #555; }
+    color: #555555; }
   .presentation i {
     color: #FF7878;
     font-size: 30px;
@@ -132,21 +139,22 @@ header .header {
   padding: 6rem 0 4rem 0;
   justify-content: center; }
   .phones p {
+    font-size: 18px;
+    font-family: Raleway-Bold;
+    color: #333333;
+    font-weight: bold;
     position: absolute;
-    font-weight: 700;
-    font-size: 17.5px;
-    margin-top: -2rem;
-    font-family: lato; }
+    margin-top: -2rem; }
   .phones .phone1 {
     width: 300px;
     height: 426px;
-    margin-right: 6rem;
-    background: url("../img/p01.png") no-repeat;
     -webkit-transition: -webkit-transform .5s;
     -moz-transition: -moz-transform .5s;
     -o-transition: -o-transform .5s;
     -ms-transition: -ms-transform .5s;
-    transition: transform .5s; }
+    transition: transform .5s;
+    margin-right: 6rem;
+    background: url("../img/p01.png") no-repeat; }
     .phones .phone1:hover {
       -webkit-transform: rotate(-10deg);
       -moz-transform: rotate(-10deg);
@@ -156,12 +164,12 @@ header .header {
   .phones .phone2 {
     width: 300px;
     height: 426px;
-    background: url("../img/p02.png") no-repeat;
     -webkit-transition: -webkit-transform .5s;
     -moz-transition: -moz-transform .5s;
     -o-transition: -o-transform .5s;
     -ms-transition: -ms-transform .5s;
-    transition: transform .5s; }
+    transition: transform .5s;
+    background: url("../img/p02.png") no-repeat; }
     .phones .phone2:hover {
       -webkit-transform: rotate(-10deg);
       -moz-transform: rotate(-10deg);
@@ -171,13 +179,13 @@ header .header {
   .phones .phone3 {
     width: 300px;
     height: 426px;
-    margin-left: 6rem;
-    background: url("../img/p03.png") no-repeat;
     -webkit-transition: -webkit-transform .5s;
     -moz-transition: -moz-transform .5s;
     -o-transition: -o-transform .5s;
     -ms-transition: -ms-transform .5s;
-    transition: transform .5s; }
+    transition: transform .5s;
+    margin-left: 6rem;
+    background: url("../img/p03.png") no-repeat; }
     .phones .phone3:hover {
       -webkit-transform: rotate(-10deg);
       -moz-transform: rotate(-10deg);
@@ -185,21 +193,42 @@ header .header {
       -ms-transform: rotate(-10deg);
       transform: rotate(-10deg); }
 
-.design {
-  display: flex;
-  flex-direction: column;
-  text-align: center; }
-  .design .screen {
+.creation {
+  text-align: center;
+  width: 100%;
+  height: 500px;
+  position: relative; }
+  .creation h4 {
+    padding-top: 3rem;
+    font-size: 18px;
+    font-family: Raleway-Bold;
+    color: #333333;
+    font-weight: bold; }
+  .creation p {
+    font-family: Lato-Light; }
+  .creation .screen {
     width: 1600px;
-    height: 564px;
-    background: url("../img/munter.png") no-repeat;
-    transform: scale(0.5); }
+    height: 333.11px;
+    max-width: 80%;
+    max-height: 70%;
+    bottom: 0;
+    background-image: url("../img/munter.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
 
 .clients {
   display: flex;
   justify-content: center;
   background-color: #EBEBEB; }
   .clients p {
+    font-size: 18px;
+    font-family: Raleway-Bold;
+    color: #333333;
+    font-weight: bold;
     position: absolute; }
   .clients .wrap {
     display: flex;
@@ -235,13 +264,18 @@ header .header {
   flex-direction: column;
   text-align: center; }
   .storytellers h3 {
+    font-size: 18px;
+    font-family: Raleway-Bold;
+    color: #333333;
+    font-weight: bold;
+    color: white;
     margin: 0;
     margin-top: 2.6rem;
     font-size: 18px; }
   .storytellers .wrapper {
     margin: 0 16.3rem 0 16.3rem; }
     .storytellers .wrapper p {
-      font-family: lato;
+      font-family: Lato-Light;
       font-weight: 300;
       margin-top: 0.5rem;
       margin-bottom: 3.8rem; }
@@ -262,3 +296,37 @@ footer {
     footer i:hover {
       color: #FF7878;
       cursor: pointer; }
+
+@media only screen and (max-width: 1150px) {
+  .presentation {
+    overflow: auto;
+    overflow-x: hidden;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 14.4px;
+    flex-wrap: wrap; }
+    .presentation h3 {
+      margin-top: 0.5rem;
+      font-weight: 700;
+      font-size: 17.5px; }
+    .presentation p {
+      line-height: 28px;
+      font-family: Lato-Light;
+      font-size: 16px;
+      color: #555555; }
+    .presentation i {
+      color: #FF7878;
+      font-size: 30px; }
+    .presentation .design {
+      padding: 0;
+      margin-top: -0.5rem; }
+    .presentation .bootstrap {
+      padding: 0;
+      margin-top: -2rem; }
+    .presentation .support {
+      padding: 0;
+      margin-bottom: 4rem; } }
+
+/*# sourceMappingURL=style.css.map */

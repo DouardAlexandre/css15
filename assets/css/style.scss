@@ -1,6 +1,8 @@
 
 
 
+/*----------------Font Face------------------------------*/
+
 
 @font-face {
 	font-family: 'Lato';
@@ -11,6 +13,10 @@
 	src: url('../fonts/lato/Lato-Light.ttf') format('truetype');
 } 
 @font-face {
+	font-family: 'Lato-Bold',serif;
+	src: url('../fonts/Lato/Lato-Bold.ttf') format('truetype');
+} 
+@font-face {
 	font-family: 'Raleway',serif;
 	src: url('../fonts/raleway/Raleway-Regular.ttf') format('truetype');
 } 
@@ -19,6 +25,7 @@
 	src: url('../fonts/raleway/Raleway-Bold.ttf') format('truetype');
 } 
 
+/*----------------Mixins------------------------------*/
 
 @mixin transform($radius) {
 	-webkit-transform:rotate($radius); 
@@ -51,9 +58,10 @@
 	font-weight: bold;
 }
 
-
+/*----------------Variables------------------------------*/
 
 $Lato:Lato;
+$Lato-Bold:Lato-Bold;
 $Lato-Light:Lato-Light;
 $Raleway: Raleway;
 $Raleway-Bold: Raleway-Bold;
@@ -82,6 +90,8 @@ body,html{
 	width:100%;
 	margin:0;
 }
+/*----------------Navbar------------------------------*/
+
 
 header{
 
@@ -154,7 +164,7 @@ header{
 		}
 		
 	}
-
+	/*----------------Header------------------------------*/
 
 	.header{
 		background: url('#{$imgpath}/header-bg.jpg') no-repeat center top;
@@ -168,16 +178,19 @@ header{
 		text-align: center; 
 		h1{
 			line-height:76px;
-			font-family:$Raleway;
+			font-family:$Lato-Light;
 			@include centerAbsolutePosition();
 			margin-top: 121px;
 			color: white;
 			font-size: 70px;
 			font-weight: 300;
 			letter-spacing: 3px;
+			.bold{
+				font-family:$Lato;
+			}
 		}
 		h2{
-			font-family:$Raleway-Bold;
+			font-family:$Lato;
 			@include centerAbsolutePosition();
 			color: white;
 			font-size: 40px;
@@ -187,6 +200,8 @@ header{
 		}
 	}
 }
+/*----------------section 1------------------------------*/
+
 .presentation{
 	margin: 0 6rem 2rem 6rem;
 	display:flex;
@@ -222,6 +237,7 @@ header{
 		padding-left:2rem;
 	}
 }
+/*----------------section 2------------------------------*/
 
 .phones{
 	width:100%;
@@ -229,7 +245,7 @@ header{
 	background-color:$grey;
 	padding:6rem 0 4rem 0;
 	justify-content:center;
-
+	margin-bottom:4rem;
 	p{
 		@include Raleway-Title();
 		position:absolute;
@@ -260,21 +276,28 @@ header{
 		}
 	}
 }
+/*----------------section 3------------------------------*/
+
 .creation{
 	text-align:center;
 	width: 100%;
 	height: 500px;
 	position: relative;
+	overflow:hidden;
+
 	h4{  
 		padding-top:3rem;
 		@include Raleway-Title();
 	}
 	p{
+		display: block;
+		max-height: 200px;
 		line-height: 28px;
 		font-family:$Lato-Light;
 		font-size: 16px;
 		color: $p;
 		margin:0 15rem 0 15rem;
+		padding-bottom:4rem;
 	}
 	.screen{
 		width:1600px;
@@ -292,6 +315,8 @@ header{
 		margin-top:3rem;
 	}
 }
+/*----------------section 4------------------------------*/
+
 .clients{
 	display:flex;
 	justify-content:center;
@@ -386,7 +411,7 @@ footer{
 
 }
 
-/*----------------media screen---------------*/
+/*----------------media screen--------------------------------------------------------------------------*/
 
 
 @media only screen and (max-width: 1150px) {
@@ -505,26 +530,21 @@ footer{
 			text-align: center; 
 			h1{
 				font-family:$Raleway;
-			//@include centerAbsolutePosition();
-			//margin-top: 119px;
-			//color: white;
-			font-size: 70px;
-			//font-weight: 300;
-			//letter-spacing: 3px;
-			white-space: nowrap;
-		}
-		h2{
-			font-family:$Raleway-Bold;
-			@include centerAbsolutePosition();
-			color: white;
-			white-space: nowrap;
-			font-size: 40px;
-			font-weight: 700;
-			letter-spacing: 2px;
-			margin-top: 295px;
+				font-size: 70px;
+				white-space: nowrap;
+			}
+			h2{
+				font-family:$Raleway-Bold;
+				@include centerAbsolutePosition();
+				color: white;
+				white-space: nowrap;
+				font-size: 40px;
+				font-weight: 700;
+				letter-spacing: 2px;
+				margin-top: 295px;
+			}
 		}
 	}
-}
 }
 
 
@@ -547,7 +567,6 @@ footer{
 			button{
 				display:block;
 				background-color:transparent;
-				//border:none;
 				right: 0;
 				position: relative;
 				float: right;
@@ -590,12 +609,9 @@ footer{
 				height:5.18rem;
 				display:flex;
 				align-items: center;
-
 				& .logo{
-
 					flex: 1;
 					margin-left: 3.9rem;
-
 					& a {
 						text-decoration:none; 
 						color:$greyTypo;
@@ -647,6 +663,114 @@ footer{
 			}
 		}
 	}
+	.creation{
+		text-align:center;
+		width: 100%;
+		height: 500px;
+		position: relative;
+		overflow:hidden;
+		
+		h4{  
+			padding-top:3rem;
+			@include Raleway-Title();
+		}
+		p{
+			display: block;
+			line-height: 28px;
+			font-family:$Lato-Light;
+			font-size: 16px;
+			color: $p;
+			margin:0 auto;
+			margin:0 3rem 0 3rem;
+			padding-bottom:4rem;
+		}
+		.screen{
+			width:1600px;
+			height:333.11px;
+			max-width: 80%;
+			max-height: 70%;
+			bottom:0;
+			background-image: url('#{$imgpath}/munter.png');
+			background-repeat: no-repeat;
+			background-position: center bottom;  
+			background-size: contain; 
+			position: absolute;
+			left:50%;
+			transform:translateX(-50%);
+			margin-top:3rem;
+		}
+	}
+	.storytellers{
+		line-height:1.7rem;
+		color:white;
+		background-color:$pink;
+		display:flex;
+		flex-direction:column;
+		text-align:center;
+		h3{
+			@include Raleway-Title();
+			color:white;
+			margin:0;
+			margin-top:2.6rem;
+			font-size:18px;
+		}
+		.wrapper{
+			margin:0 auto;
+			margin:0 3.3rem 0 3.3rem;
+			p{
+				font-family:$Lato-Light;
+				font-weight: 300;
+				margin-top:0.5rem;
+				margin-bottom:3.8rem;
+			}
+		}
+
+
+	}
+	.clients{
+		display:flex;
+		justify-content:center;
+		background-color:$greylight;
+		p{
+			@include Raleway-Title();
+			position:absolute;
+			margin-top:3rem;
+		}
+		.wrap{
+			display:flex;
+			flex-direction:column;
+			text-align:center;
+			justify-content:center;
+			margin-top:3rem;
+			margin-bottom:6rem;
+			.lowe{
+				width:170px;
+				height: 200px;
+				background: url('#{$imgpath}/c01.gif') no-repeat;
+			}
+			.ms{
+				width:170px;
+				height: 200px;
+				background: url('#{$imgpath}/c02.gif') no-repeat;
+			}
+			.sealy{
+				width:170px;
+				height: 200px;
+				background: url('#{$imgpath}/c03.gif') no-repeat;
+			}
+			.circle{
+				width:170px;
+				height: 200px;
+				background: url('#{$imgpath}/c04.gif') no-repeat;
+			}
+			.wells{
+				width:170px;
+				height: 200px;
+				background: url('#{$imgpath}/c05.gif') no-repeat;
+			}
+		}
+
+	}
 }
 @media only screen and (max-width: 1185px) {
 	.phones{
@@ -688,3 +812,4 @@ footer{
 		}
 	}
 }
+

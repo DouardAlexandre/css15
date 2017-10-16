@@ -11,11 +11,11 @@
 	src: url('../fonts/lato/Lato-Light.ttf') format('truetype');
 } 
 @font-face {
-	font-family: 'Raleway';
+	font-family: 'Raleway',serif;
 	src: url('../fonts/raleway/Raleway-Regular.ttf') format('truetype');
 } 
 @font-face {
-	font-family: 'Raleway-Bold';
+	font-family: 'Raleway-Bold',serif;
 	src: url('../fonts/raleway/Raleway-Bold.ttf') format('truetype');
 } 
 
@@ -77,6 +77,7 @@ $p:#555555;
 
 body,html{
 	background-color:$background;
+	overflow-x:hidden;
 	font-family:$Lato;
 	width:100%;
 	margin:0;
@@ -87,31 +88,33 @@ header{
 	.navbar{
 		z-index:2;
 		position: relative;
-		//margin: 0 auto;
 		overflow: hidden;
 		background-color: $black;
 		position: fixed;
 		top: 0; 
 		width: 100%;
 		height:5.18rem; 
-		
 		white-space: nowrap;
+		button{
+			display:none;
+		}
 		.links{
-
 			height:5.18rem;
 			display:flex;
 			align-items: center;
+
 			& .logo{
 				
 				flex: 1;
-				margin-left: 3.5rem;
+				margin-left: 3.9rem;
 				
 				& a {
 					text-decoration:none; 
 					color:$greyTypo;
 					transition: color 0.3s ease;
-					font-weight: 800;
-					font-size: 22px; 
+					font-weight: 900;
+					font-size: 22px;
+					line-height: 20px; 
 					&:hover {
 						color:white;					
 					}
@@ -125,6 +128,7 @@ header{
 				display: block;
 				width: 400px;
 				right: 0;
+				margin-right: 2rem;
 				& .home{
 					color:white;
 					background-color:$pink;
@@ -163,10 +167,10 @@ header{
 
 		text-align: center; 
 		h1{
-
+			line-height:76px;
 			font-family:$Raleway;
 			@include centerAbsolutePosition();
-			margin-top: 119px;
+			margin-top: 121px;
 			color: white;
 			font-size: 70px;
 			font-weight: 300;
@@ -176,11 +180,10 @@ header{
 			font-family:$Raleway-Bold;
 			@include centerAbsolutePosition();
 			color: white;
-
 			font-size: 40px;
 			font-weight: 700;
 			letter-spacing: 2px;
-			margin-top: 295px;
+			margin-top: 293px;
 		}
 	}
 }
@@ -267,8 +270,11 @@ header{
 		@include Raleway-Title();
 	}
 	p{
+		line-height: 28px;
 		font-family:$Lato-Light;
-		//margin-bottom: 14rem;
+		font-size: 16px;
+		color: $p;
+		margin:0 15rem 0 15rem;
 	}
 	.screen{
 		width:1600px;
@@ -283,6 +289,7 @@ header{
 		position: absolute;
 		left:50%;
 		transform:translateX(-50%);
+		margin-top:3rem;
 	}
 }
 .clients{
@@ -292,6 +299,7 @@ header{
 	p{
 		@include Raleway-Title();
 		position:absolute;
+		margin-top:3rem;
 
 	}
 	.wrap{
@@ -378,6 +386,8 @@ footer{
 
 }
 
+/*----------------media screen---------------*/
+
 
 @media only screen and (max-width: 1150px) {
 	.presentation{
@@ -388,17 +398,17 @@ footer{
 		justify-content:center;
 		text-align: center;
 		font-size:14.4px;
-        flex-wrap:wrap;
-        h3{
-        	margin-top:0.5rem;
-        	font-weight: 700;
-        	font-size: 17.5px;
-        }
-        p{
-        	line-height: 28px;
-        	font-family:$Lato-Light;
-        	font-size: 16px;
-        	color: $p;
+		flex-wrap:wrap;
+		h3{
+			margin-top:0.5rem;
+			font-weight: 700;
+			font-size: 17.5px;
+		}
+		p{
+			line-height: 28px;
+			font-family:$Lato-Light;
+			font-size: 16px;
+			color: $p;
 		}
 		i{
 			color: $pink;
@@ -419,5 +429,262 @@ footer{
 	}
 }
 @media only screen and (max-width: 555px) {
-	
+	header{
+
+		.navbar{
+			z-index:2;
+			position: relative;
+			background-color: $black;
+			position: fixed;
+			top: 0; 
+			width: 100%;
+			height:5.18rem; 
+			white-space: nowrap;
+			.links{
+
+				height:5.18rem;
+				display:flex;
+				align-items: center;
+				& .logo{
+
+					flex: 1;
+					margin-left: 3.5rem;
+
+					& a {
+						text-decoration:none; 
+						color:$greyTypo;
+						transition: color 0.3s ease;
+						font-weight: 800;
+						font-size: 22px; 
+						&:hover {
+							color:white;					
+						}
+						& i{
+							color: $pink;
+							margin:0 -4px 0 -4px;
+						}
+					}
+				}
+				.menu{
+					display: block;
+					width: 400px;
+					right: 0;
+					& .home{
+						color:white;
+						background-color:$pink;
+						transition: background-color 0.3s ease;
+						&:hover {
+							background-color:black;
+						}
+					}
+					& a{
+						transition: color 0.3s ease;
+						padding: 5px 15px;
+						padding-top: 14px;
+						padding-bottom: 15px;
+						text-decoration: none;
+						color:$greyTypo;
+						font-size:14.4px;
+						font-weight: 800;
+						&:hover {
+							color:white;
+						}
+					}
+				} 
+			}
+		}
+		.header{
+			background: url('#{$imgpath}/header-bg.jpg') no-repeat center top;
+			width:100vw;
+			margin:0;
+			margin-top:3.75rem;
+			min-height: 500px;
+			background-position: center center; 
+			background-size: cover;
+			white-space: nowrap;
+			text-align: center; 
+			h1{
+				font-family:$Raleway;
+			//@include centerAbsolutePosition();
+			//margin-top: 119px;
+			//color: white;
+			font-size: 70px;
+			//font-weight: 300;
+			//letter-spacing: 3px;
+			white-space: nowrap;
+		}
+		h2{
+			font-family:$Raleway-Bold;
+			@include centerAbsolutePosition();
+			color: white;
+			white-space: nowrap;
+			font-size: 40px;
+			font-weight: 700;
+			letter-spacing: 2px;
+			margin-top: 295px;
+		}
+	}
+}
+}
+
+
+
+
+@media only screen and (max-width: 760px) {
+
+	header{
+
+		.navbar{
+			z-index:2;
+			position: relative;
+			overflow: hidden;
+			background-color: $black;
+			position: fixed;
+			top: 0; 
+			width: 100%;
+			height:5.18rem; 
+			white-space: nowrap;
+			button{
+				display:block;
+				background-color:transparent;
+				//border:none;
+				right: 0;
+				position: relative;
+				float: right;
+				padding: 9px 10px;
+				margin-top: 25px;
+				margin-right: 15px;
+				margin-bottom: 8px;
+				border: 1px solid transparent;
+				border-radius: 4px;
+				&:hover{
+					background-color:#333333;
+				}
+				.icon-bar1{
+					margin-top:4px;
+					width: 22px;
+					height: 2px;
+					background-color:white;
+					display: block;
+					border-radius: 1px;
+					
+				}
+				.icon-bar2{
+					margin-top:4px;
+					width: 22px;
+					height: 2px;
+					background-color: white;
+					display: block;
+					border-radius: 1px;
+				}
+				.icon-bar3{
+					margin-top:4px;
+					width: 22px;
+					height: 2px;
+					background-color: white;
+					display: block;
+					border-radius: 1px;
+				}
+			}
+			.links{
+				height:5.18rem;
+				display:flex;
+				align-items: center;
+
+				& .logo{
+
+					flex: 1;
+					margin-left: 3.9rem;
+
+					& a {
+						text-decoration:none; 
+						color:$greyTypo;
+						transition: color 0.3s ease;
+						font-weight: 900;
+						font-size: 22px;
+						line-height: 20px; 
+						&:hover {
+							color:white;					
+						}
+						& i{
+							color: $pink;
+							margin:0 -4px 0 -4px;
+						}
+					}
+				}
+				.menu{
+					display:none;
+				} 
+			}
+		}
+		.header{
+			background: url('#{$imgpath}/header-bg.jpg') no-repeat center top;
+			width:100%;
+			margin:0;
+			margin-top:3.75rem;
+			min-height: 500px;
+			background-position: center center; 
+			background-size: cover;
+			text-align: center; 
+			h1{
+				line-height:76px;
+				font-family:$Raleway;
+				@include centerAbsolutePosition();
+				margin-top: 121px;
+				color: white;
+				font-size: 70px;
+				font-weight: 300;
+				letter-spacing: 3px;
+			}
+			h2{
+				font-family:$Raleway-Bold;
+				@include centerAbsolutePosition();
+				color: white;
+				font-size: 40px;
+				font-weight: 700;
+				letter-spacing: 2px;
+				margin-top: 293px;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 1185px) {
+	.phones{
+		width:100%;
+		display:flex;
+		flex-direction:column;
+		background-color:$grey;
+		padding:10rem 0 4rem 0;
+		justify-content:center;
+		align-items:center;
+		p{
+			@include Raleway-Title();
+			position:absolute;
+			margin-top:-43rem;
+		}
+		.phone1{
+			@include transition(.5s);
+			margin:0;
+			background: url('#{$imgpath}/p01.png') no-repeat;
+			&:hover{
+				@include transform(-10deg);
+			}
+		}
+		.phone2{
+			@include transition(.5s);
+			margin:0;
+			background: url('#{$imgpath}/p02.png') no-repeat;
+			&:hover{
+				@include transform(-10deg);
+			}
+		}
+		.phone3{
+			@include transition(.5s);
+			margin:0;
+			background: url('#{$imgpath}/p03.png') no-repeat;
+			&:hover{
+				@include transform(-10deg);
+			}
+		}
+	}
 }

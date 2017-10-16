@@ -3,7 +3,7 @@
 
 ## réalisation  : Alexandre Douard
 
-#Github page :  https://kvort3x.github.io/css15/
+#Github page :  https://douardalexandre.github.io/css15/
 
 
 ___
